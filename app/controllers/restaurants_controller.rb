@@ -1,4 +1,5 @@
 class RestaurantsController < ApplicationController
+  protect_from_forgery with: :null_session
   def index
     @restaurants = Restaurant.all
     render json: @restaurants
@@ -32,7 +33,7 @@ class RestaurantsController < ApplicationController
   def destroy
     @restaurant = Restaurant.find_by(slug: params[:slug])
 
-    if @restaurant.destroy(restaurant_params)
+    if @restaurant.destroy
       head :no_content
     else
       render json: {error: restaurant.errors.messages}, status: 422
