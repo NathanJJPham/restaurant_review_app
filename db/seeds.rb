@@ -5,3 +5,34 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+restaurants = Restaurant.create([
+  {
+    name: "Taco Bell",
+    image_url:"https://picsum.photos/id/237/200/301"
+  },
+  {
+    name: "Wendys",
+    image_url:"https://picsum.photos/id/237/200/301"
+  },
+  {
+    name: "Mcdonalds",
+    image_url:"https://picsum.photos/id/237/200/301"
+  }
+
+])
+
+reviews = Review.create([
+  {
+    title:"Bad",
+    description:"bad place",
+    score: 1,
+    restaurant: restaurants.first
+  },
+  {
+    title:"Good",
+    description:"Good place",
+    score: 5,
+    restaurant: restaurants.first
+  }
+])
