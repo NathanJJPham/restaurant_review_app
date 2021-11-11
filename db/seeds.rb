@@ -5,7 +5,6 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-
 restaurants = Restaurant.create([
   {
     name: "Taco Bell",
@@ -13,11 +12,11 @@ restaurants = Restaurant.create([
   },
   {
     name: "Wendys",
-    image_url:"https://picsum.photos/id/237/200/301"
+    image_url:"https://picsum.photos/id/237/200/302"
   },
   {
     name: "Mcdonalds",
-    image_url:"https://picsum.photos/id/237/200/301"
+    image_url:"https://picsum.photos/id/237/200/303"
   }
 
 ])

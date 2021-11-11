@@ -5,7 +5,43 @@ class RestaurantsController < ApplicationController
   end
 
   def show
-    @restaurant = Restaurant.find(params[:id])
+    @restaurant = Restaurant.find_by(slug: params[:slug])
     render json: @restaurant
   end
+
+  def create
+    @restaurant = Restaurant.new(restaurant_params)
+
+    if @restaurant.save
+      render json: @restaurant
+    else
+      render json: {error: restaurant.errors.messages}, status: 422
+    end
+  end
+
+  def update
+    @restaurant = Restaurant.find_by(slug: params[:slug])
+
+    if @restaurant.update(restaurant_params)
+      render json: @restaurant
+    else
+      render json: {error: restaurant.errors.messages}, status: 422
+    end
+  end
+
+  def destroy
+    @restaurant = Restaurant.find_by(slug: params[:slug])
+
+    if @restaurant.destroy(restaurant_params)
+      head :no_content
+    else
+      render json: {error: restaurant.errors.messages}, status: 422
+    end
+  end
+
+  private 
+  def restaurant_params
+    params.require(:restaurant).permit(:name, :image_url)
+  end
+  
 end
