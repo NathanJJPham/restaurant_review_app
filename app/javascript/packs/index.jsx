@@ -6,7 +6,8 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import PropTypes from 'prop-types'
 import App from '../components/App'
-import {BrowserRouter as Router, Route, Routes } from 'react-router-dom'
+import { BrowserRouter } from 'react-router-dom'
+// import {BrowserRouter as Router, Route, Routes } from 'react-router-dom'
 
 document.addEventListener('DOMContentLoaded', () => {
   ReactDOM.render(
@@ -18,7 +19,10 @@ document.addEventListener('DOMContentLoaded', () => {
     // <Router>
     //     <Route path="/" elements ={App}/>
     // </Router>,
-    <App />,
+    // <BrowserRouter>
+    //   <Route path = "/" element={App}/>
+    // </BrowserRouter>,
+    <App/>,
     document.body.appendChild(document.createElement('div')),
   )
 })
