@@ -11,17 +11,6 @@ import { BrowserRouter } from 'react-router-dom'
 
 document.addEventListener('DOMContentLoaded', () => {
   ReactDOM.render(
-    // <BrowserRouter>
-    //   <Routes>
-    //     <Route path="/" elements ={App}/>
-    //   </Routes>
-    // </BrowserRouter>,
-    // <Router>
-    //     <Route path="/" elements ={App}/>
-    // </Router>,
-    // <BrowserRouter>
-    //   <Route path = "/" element={App}/>
-    // </BrowserRouter>,
     <App/>,
     document.body.appendChild(document.createElement('div')),
   )
