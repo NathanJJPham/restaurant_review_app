@@ -1,6 +1,5 @@
 import React, {useState, useEffect, Fragment} from 'react'
-import axios from 'axios'
-import Restaurant from './Restaurant'
+import axios from 'axios'  
 import { BrowserRouter as Route, Link } from 'react-router-dom'
 
 const Restaurants = () => {
