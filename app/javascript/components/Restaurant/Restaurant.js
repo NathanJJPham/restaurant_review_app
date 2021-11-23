@@ -20,7 +20,15 @@ const Restaurant = () => {
     fetchRestaurant();
   }, []);
 
-  return <div>
+  const handleChange = (e) => {
+    e.preventDefault()
+    console.log('name', e.target.name, 'value', e.target.value)
+  }
+
+  const handleSubmit = (e) => {
+    e.preventDefault()
+  }
+  return (<div>
     <ul>
       <li>
         {restaurant.name}
@@ -28,8 +36,12 @@ const Restaurant = () => {
       <li> <img src = {restaurant.image_url} alt={restaurant.name}/></li>
       <li>{restaurant.avg_score} / 5 stars</li>
     </ul>
-    <ReviewForm/>
-  </div>
+    <ReviewForm
+      handleChange = {handleChange}
+      handleSubmit = {handleSubmit}
+      review={review}
+    />
+  </div>)
 }
 
 export default Restaurant
